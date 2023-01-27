@@ -1,22 +1,31 @@
 export default {
 	address: 'Address',
 	city: 'City',
-	street: 'Street',
-	postCode: 'Post code',
-	phone: 'Phone',
 	email: 'Email',
+	lang: 'Lang',
+	language: 'Language',
+	phone: 'Phone',
+	postCode: 'Post code',
+	street: 'Street',
+
+	languages: {
+		cs: 'Czech',
+		csCode: 'cs',
+		en: 'English',
+		enCode: 'en',
+	},
 
 	menu: {
 		authorName: 'Rosemary',
-		home: 'Home',
 		contact: 'Contact',
-		news: 'News',
 		gallery: 'Gallery',
+		home: 'Home',
+		news: 'News',
 	},
 
 	footer: {
-		socials: 'Socials',
-		latestNews: 'Latest news',
 		contactInfo: "Contacts",
+		latestNews: 'Latest news',
+		socials: 'Socials',
 	}
 };

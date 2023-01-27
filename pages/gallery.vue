@@ -1,6 +1,11 @@
 <template>
 	<div class="pageBody">
-		{{ $t('menu.gallery') }}
+		{{ $t('menu.authorName') }}
+		{{ $t('menu.news') }}
+		{{ $t('menu.news') }}
+		{{ $t('menu.news') }}
+		{{ $t('menu.news') }}
+		{{ $t('menu.news') }}
 	</div>
 </template>
 
@@ -8,5 +13,13 @@
 export default {
 	name: 'GalleryPage',
 	layout: 'default',
+	data() {
+		return {
+		};
+	},
+	created() {
+	},
+	methods: {
+	},
 };
 </script>

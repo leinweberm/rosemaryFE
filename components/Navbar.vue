@@ -1,38 +1,54 @@
 <template>
 	<div class="navBody softBlackBG">
 		<div class="navInnerBody">
+
 			<div class="navWrapper">
 				<NuxtLink
-					to="/"
+					:to="localePath('index')"
 					class="navLink softWhite boldText"
 					style="fontSize: 24px"
 				>
 					{{ $t('menu.authorName') }}
 				</NuxtLink>
 			</div>
+
 			<div class="navWrapper">
 				<NuxtLink
-					to="/contact"
+					:to="localePath('contact')"
 					class="navLink softWhite lightText"
-					:click="setActivePage('contact')"
 				>
 					{{ $t('menu.contact') }}
 				</NuxtLink>
 				<NuxtLink
-					to="/news"
+					:to="localePath('news')"
 					class="navLink softWhite lightText"
-					:click="setActivePage('news')"
 				>
 					{{ $t('menu.news') }}
 				</NuxtLink>
 				<NuxtLink
-					to="/gallery"
+					:to="localePath('gallery')"
 					class="navLink softWhite lightText"
-					:click="setActivePage('gallery')"
 				>
 					{{ $t('menu.gallery') }}
 				</NuxtLink>
+
+				<div class="langSwitchBody" @click.stop="showLanguages = !showLanguages">
+					{{ $i18n.locale.toUpperCase() }}
+					<div v-if="showLanguages" class="langOptions">
+						<template v-for="(lang) in languages">
+							<NuxtLink
+								v-if="lang !== $i18n.locale"
+								:key="lang"
+								class="langOptionsItem"
+								:to="switchLocalePath(lang)"
+							>
+								{{ lang.toUpperCase() }}
+							</NuxtLink>
+						</template>
+					</div>
+				</div>
 			</div>
+
 		</div>
 	</div>
 </template>
@@ -42,15 +58,23 @@ export default {
 	name: 'TheNavbar',
 	data() {
 		return {
-			activePage: null
+			activeLang: null,
+			languages: ['cs', 'en'],
+			showLanguages: false,
 		};
 	},
+	watch: {
+		activeLang(newVal) {
+			this.$i18n.locale = newVal;
+		}
+	},
 	created() {
+		this.activeLang = this.$i18n.locale;
 	},
 	methods: {
-		setActivePage(value) {
-			this.activePage = value;
-		}
+		// setActiveLang() {
+
+		// },
 	},
 };
 </script>

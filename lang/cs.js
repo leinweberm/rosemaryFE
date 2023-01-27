@@ -1,22 +1,31 @@
 export default {
 	address: 'Adresa',
 	city: 'Město',
-	street: 'Ulice',
-	postCode: 'PSČ',
-	phone: 'Telefon',
 	email: 'Email',
+	lang: 'Jazyk',
+	language: 'Jazyk',
+	phone: 'Telefon',
+	postCode: 'PSČ',
+	street: 'Ulice',
+
+	languages: {
+		cs: 'Čeština',
+		csCode: 'cs',
+		en: 'Angličtina',
+		enCode: 'en',
+	},
 
 	menu: {
 		authorName: 'Rosemary',
-		home: 'Domů',
 		contact: 'Kontakt',
-		news: 'Novinky',
 		gallery: 'Galerie',
+		home: 'Domů',
+		news: 'Novinky',
 	},
 
 	footer: {
-		socials: 'Sociální sítě',
-		latestNews: 'Poslední novinky',
 		contactInfo: "Kontaktní údaje",
+		latestNews: 'Poslední novinky',
+		socials: 'Sociální sítě',
 	}
 };

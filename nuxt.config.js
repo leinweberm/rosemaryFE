@@ -50,6 +50,7 @@ export default {
 	},
 
 	i18n: {
+		strategy: 'prefix',
 		locales: [
 			{
 				code: 'cs',

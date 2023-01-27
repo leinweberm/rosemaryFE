@@ -85,3 +85,35 @@
 	justify-content: flex-start;
 	align-items: center;
 }
+.langSwitchBody {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	color: var(--softWhite);
+	border: 1px solid var(--softWhite);
+	z-index: 11;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+.langOptions {
+	display: flex;
+	flex-direction: column;
+	min-height: 30px;
+	width: 30px;
+	color: var(--softBlack);
+	background: var(--softWhite);
+	position: absolute;
+	top: 52px;
+	z-index: 11;
+}
+.langOptionsItem {
+	display: flex;
+	min-height: 30px;
+	width: 30px;
+	justify-content: center;
+	align-items: center;
+}
