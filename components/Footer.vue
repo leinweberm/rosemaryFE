@@ -20,6 +20,7 @@
 				<p style="margin-bottom: 10px;" class="mediumText">
 					{{ $t('footer.contactInfo') }}
 				</p>
+				<NuxtLink :to="localePath('admin')">admin</NuxtLink>
 			</div>
 		</div>
 	</div>

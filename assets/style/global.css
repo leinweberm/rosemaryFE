@@ -2,16 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,900&display=swap');
 
-:root {
-	--green: #236642;
-	--purple: #4D2E71;
-	--orange: #EFB737;
-	--softWhite: #FEFEFA;
-	--grey: #414A4C;
-	--softBlack: #0F0E12;
-	--sideBarWidth: 250px;
-}
-
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -20,26 +10,96 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
-/* GLOBAL STYLING */
+/* ========== GLOBAL STYLES / HTML TAGS ========== */
+/* COLORS*/
+:root {
+	--green: #236642;
+	--purple: #4D2E71;
+	--orange: #EFB737;
+	--softWhite: #FEFEFA;
+	--grey: grey;
+	--silver: silver;
+	--softBlack: #0F0E12;
+	--sideBarWidth: 250px;
+	--globalPadding: 20px;
+	--globalMargin: 20px;
+}
 .softWhite { color: var(--softWhite); }
 .softWhiteBG { background-color: var(--softWhite); }
 .softBlack { color: var(--softBlack); }
 .softBlackBG { background-color: var(--softBlack); }
 .grey { color: var(--grey); }
 .greyBG { background-color: var(--grey); }
+
+/* VARIABLES */
 .boldText { font-weight: 800; }
 .mediumText { font-weight: 500; }
 .lightText { font-weight: 300; }
-p {
-	font-family: 'Open Sans', sans-serif;
+.autoHeight { height: auto !important; }
+.cfc { display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.cfr { display: flex; flex-direction: row; justify-content: center; align-items: center;}
+.size-1 { width: 100%; }
+.size-2 { width: 50%; }
+.size-3 { width: 33%; }
+.size-4 { width: 25%; }
+.size-5 { width: 20%; }
+p { font-family: 'Open Sans', sans-serif; }
+h1, h2 { font-family: 'Roboto Serif', serif; font-weight: 300;}
+
+/* BUTTONS */
+button, .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--orange);
+	color: var(--softWhite);
+	height: 30px;
+	padding: 0 30px;
+	min-width: 150px;
+	font-size: 18px;
+	border: none;
+	cursor: pointer;
 }
-h1, h2 {
-	font-family: 'Roboto Serif', serif;
+button:not(:first-of-type), .button:not(:first-of-type) {
+	margin-left: var(--globalMargin);
 }
-.autoHeight {
-	height: auto !important;
+button:disabled, .button:disabled {
+	cursor: default;
+	background-color: var(--silver);
+	color: var(--grey);
+}
+.buttonInverseBorder {
+	background-color: var(--softWhite);
+	border: 1px solid var(--silver);
+	color: var(--silver);
+}
+.buttonInverse {
+	color: var(--silver);
 }
 
+/* GLOBAL > INPUTS */
+label {
+	color: var(--grey);
+	margin-bottom: 4px;
+	font-size: 13px;
+	align-self: flex-start;
+}
+input {
+	border: none;
+	color: var(--grey);
+	height: 30px;
+	margin-bottom: 20px;
+	outline: 1px solid var(--silver);
+	padding: 0 10px;
+	font-size: 15px;
+}
+input:focus {
+	border-radius: 0 !important;
+	outline: 1px solid var(--orange) !important;
+	border: 1px solid var(--orange) !important;
+}
+
+/* ========== GLOBAL COMPONENTS ========== */
 /* NAVBAR */
 .navBody {
 	display: flex;
@@ -66,8 +126,8 @@ h1, h2 {
 	align-items: center;
 }
 .navLink {
-	padding: 0 20px;
-	margin-right: 20px;
+	padding: 0 var(--globalPadding);
+	margin-right: var(--globalMargin);
 	font-size: 18px;
 }
 .navPadder {
@@ -100,7 +160,7 @@ h1, h2 {
 	width: 100%;
 	height: 35px;
 	border-top: 1px solid var(--softBlack);
-	padding-left: 20px;
+	padding-left: var(--globalPadding);
 	align-items: center;
 	cursor: pointer;
 }
@@ -112,7 +172,7 @@ h1, h2 {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 20px 0;
+	padding: var(--globalPadding) 0;
 }
 .footerInnerBody {
 	display: flex;

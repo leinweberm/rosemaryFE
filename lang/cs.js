@@ -3,13 +3,18 @@ export default {
 	authorBio: 'Rosemary maluje!',
 	authorBioTitle: 'Rosemary maluje. Abstraktní obrazy. Olejomalba na plátně.',
 	authorDescription: 'Abstraktní olejomalby na plátně.',
+	cancel: 'Zrušit',
 	city: 'Město',
+	confirm: 'Potvrdit',
 	email: 'Email',
 	lang: 'Jazyk',
 	language: 'Jazyk',
+	login: 'Přihlásit se',
+	password: 'Heslo',
 	phone: 'Telefon',
 	postCode: 'PSČ',
 	street: 'Ulice',
+	username: 'Uživatelské jméno',
 
 	admin: {
 		exitCMS: 'Opustit CMS',

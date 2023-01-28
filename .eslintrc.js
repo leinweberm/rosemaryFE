@@ -13,6 +13,8 @@ module.exports = {
 	plugins: ['jest'],
 	// add your custom rules here!
 	rules: {
+		'eslint linebreak-style': ["warn", "unix"],
+		'import/default': 'off',
 		'vue/require-default-prop': 'off',
 		'array-callback-return': 'off',
 		'no-console': 'off',
