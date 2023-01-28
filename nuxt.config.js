@@ -32,19 +32,23 @@ export default {
 
 	buildModules: [
 		'@nuxtjs/eslint-module',
-		'@nuxtjs/style-resources'
+		'@nuxtjs/style-resources',
 	],
 
 	modules: [
 		'@nuxtjs/i18n',
 		'@nuxtjs/axios',
-		'@nuxtjs/auth-next',
+		'@nuxtjs/auth',
 	],
 
 	styleResources: {
 		scss: [
 			'~/assets/style/global.scss',
 		],
+	},
+
+	axios: {
+		baseURL: 'http://localhost:3000/api',
 	},
 
 	i18n: {
@@ -79,15 +83,30 @@ export default {
 		}
 	},
 
-	serverMiddleware: [
-		{ path: '/', handler: '~/server-middleware/routes.js'}
-	],
+	serverMiddleware: {
+		'/api': '~/api'
+	},
 
 	target: 'server',
 
 	auth: {
-
+		strategies: {
+			local: {
+				token: {
+					property: 'token',
+					global: true,
+				},
+				endpoints: {
+					login: { url: '/auth/login', method: 'post', propertyName: 'token' },
+					logout: { url: '/auth/logout', method: 'post' },
+					user: false,
+				}
+			}
+		}
 	},
 
-	build: {},
+	build: {
+		use: '@nuxtjs/vercel-builder',
+		distDir: 'dist'
+	},
 };

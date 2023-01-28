@@ -1,0 +1,26 @@
+{
+	"version": 2,
+	"builds": [
+		{
+			"src": "nuxt.config.js",
+			"use": "@nuxtjs/vercel-builder",
+			"config": {
+				"buildCommand": "npm run build"
+			}
+		},
+		{
+			"src": "/index/index.js",
+			"use": "@now/node"
+		}
+	],
+	"routes": [
+		{
+			"src": "/api/(.*)",
+			"dest": "/index.js"
+		},
+		{
+			"src": "/(.*)",
+			"dest": "/index.html"
+		}
+	]
+}

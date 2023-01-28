@@ -20,6 +20,8 @@
 	--grey: grey;
 	--silver: silver;
 	--softBlack: #0F0E12;
+	--warn: #FB6944;
+	--error: #ff4545;
 	--sideBarWidth: 250px;
 	--globalPadding: 20px;
 	--globalMargin: 20px;

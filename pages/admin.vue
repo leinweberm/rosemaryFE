@@ -48,7 +48,10 @@
 			<div
 				class="adminLoginItem cfr"
 			>
-				<button :disabled="!validForm">
+				<button
+					:disabled="!validForm"
+					@click="login"
+				>
 					{{ $t('confirm') }}
 				</button>
 				<NuxtLink
@@ -66,12 +69,14 @@
 <script>
 import AdminSidebar from '../components/AdminSidebar.vue';
 import Modal from '../components/Modal.vue';
+
 export default {
 	name: 'AdminPage',
 	components: { AdminSidebar, Modal },
 	layout: 'admin',
 	data() {
 		return {
+			adminModel: null,
 			showExitCmsDialog: false,
 			loginForm: {
 				username: null,
@@ -92,14 +97,26 @@ export default {
 	created() {
 		this.$nuxt.$on('openExitCmsDialog', this.openExitCmsDialog, this);
 	},
+	// async asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+
+	// },
 	methods: {
 		openExitCmsDialog(content) {
 			console.log('emit event');
 			this.showExitCmsDialog = true;
 			console.log('content', JSON.stringify(content));
 		},
-		login() {
-			this.$auth.loginWith('customStrategy', { /* ... */ });
+		async login() {
+			try {
+				const result = await this.$auth.loginWith('local', {
+					data: { ...this.loginForm }
+				});
+				console.log('result:', JSON.stringify(result));
+			} catch (error) {
+				console.log('error:', JSON.stringify(error));
+				console.error(error);
+			}
+
 		},
 	},
 };
