@@ -1,17 +1,18 @@
 /* Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,900&display=swap');
 
 :root {
 	--green: #236642;
 	--purple: #4D2E71;
 	--orange: #EFB737;
-	--softWhite: #F5F5F5;
-	--softBlack: #0E1111;
+	--softWhite: #FEFEFA;
 	--grey: #414A4C;
+	--softBlack: #0F0E12;
+	--sideBarWidth: 250px;
 }
 
 * {
-	/* border: 1px solid red; */
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
@@ -29,6 +30,15 @@
 .boldText { font-weight: 800; }
 .mediumText { font-weight: 500; }
 .lightText { font-weight: 300; }
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+h1, h2 {
+	font-family: 'Roboto Serif', serif;
+}
+.autoHeight {
+	height: auto !important;
+}
 
 /* NAVBAR */
 .navBody {
@@ -59,6 +69,40 @@
 	padding: 0 20px;
 	margin-right: 20px;
 	font-size: 18px;
+}
+.navPadder {
+	display: flex;
+	height: 70px;
+	width: 100%;
+}
+
+/* ADMIN SIDEBAR MENU */
+.sideBar {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	position: absolute;
+	width: var(--sideBarWidth);
+	height: 100vh;
+	left: 0;
+	top: 0;
+	z-index: 10;
+}
+.sideBarGroup {
+	display: block;
+	height: 35px;
+	border-bottom: 1px solid var(--grey);
+	justify-content: flex-start;
+	overflow: hidden;
+}
+.sideBarButton {
+	display: flex;
+	width: 100%;
+	height: 35px;
+	border-top: 1px solid var(--softBlack);
+	padding-left: 20px;
+	align-items: center;
+	cursor: pointer;
 }
 
 /* FOOTER */
@@ -92,11 +136,10 @@
 	align-items: center;
 	width: 30px;
 	height: 30px;
-	color: var(--softWhite);
-	border: 1px solid var(--softWhite);
 	z-index: 11;
 	top: 20px;
 	right: 20px;
+	border: 1px solid var(--softWhite);
 	cursor: pointer;
 }
 .langOptions {
@@ -104,8 +147,6 @@
 	flex-direction: column;
 	min-height: 30px;
 	width: 30px;
-	color: var(--softBlack);
-	background: var(--softWhite);
 	position: absolute;
 	top: 52px;
 	z-index: 11;
@@ -116,4 +157,6 @@
 	width: 30px;
 	justify-content: center;
 	align-items: center;
+	font-weight: 500;
+	border: 1px solid var(--grey);
 }

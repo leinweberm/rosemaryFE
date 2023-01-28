@@ -1,13 +1,22 @@
 <template>
-	<div class="pageBody">
-		{{ $t('menu.authorName') }}
-		{{ $t('menu.news') }}
-		{{ $t('menu.news') }}
-		{{ $t('menu.news') }}
-		{{ $t('menu.news') }}
-		{{ $t('menu.news') }}
-		<nuxt-link :to="switchLocalePath('cs')">{{ $t('languages.cs') }}</nuxt-link>
-		<nuxt-link :to="switchLocalePath('en')">{{ $t('languages.en') }}</nuxt-link>
+	<div class="pageBody softWhiteBG heroBaner" :name="$t('meta.backgroundImage')">
+		<title>{{ $t('authorBioTitle') }}</title>
+		<div style="position: absolute; top: 80%; text-align: center">
+			<h1
+				class="softWhite"
+				style="font-size: 50px; font-family: Open Sans; font-weight: 800;"
+				:name="$t('meta.authorInitials')"
+			>
+				{{ $t('authorBio') }}
+			</h1>
+			<h2
+				class="softWhite"
+				style="font-size: 30px; font-family: Open Sans; font-weight: 500;"
+				:name="$t('meta.authorDescription')"
+			>
+				{{ $t('authorDescription') }}
+			</h2>
+		</div>
 	</div>
 </template>
 
@@ -17,6 +26,14 @@ export default {
 	layout: 'default',
 	data() {
 		return {
+		};
+	},
+	head() {
+		return {
+			title: this.$t('authorBioTitle'),
+			htmlAttrs: {
+				lang: this.$i18n.locale,
+			}
 		};
 	},
 	created() {

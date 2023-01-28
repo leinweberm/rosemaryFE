@@ -32,14 +32,18 @@
 					{{ $t('menu.gallery') }}
 				</NuxtLink>
 
-				<div class="langSwitchBody" @click.stop="showLanguages = !showLanguages">
+				<div class="langSwitchBody softWhite" @click.stop="showLanguages = !showLanguages">
 					{{ $i18n.locale.toUpperCase() }}
-					<div v-if="showLanguages" class="langOptions">
+					<div
+						v-if="showLanguages"
+						class="langOptions"
+						style="var(--softWhite)"
+					>
 						<template v-for="(lang) in languages">
 							<NuxtLink
 								v-if="lang !== $i18n.locale"
 								:key="lang"
-								class="langOptionsItem"
+								class="langOptionsItem softBlackBG softWhite"
 								:to="switchLocalePath(lang)"
 							>
 								{{ lang.toUpperCase() }}
@@ -72,9 +76,6 @@ export default {
 		this.activeLang = this.$i18n.locale;
 	},
 	methods: {
-		// setActiveLang() {
-
-		// },
 	},
 };
 </script>

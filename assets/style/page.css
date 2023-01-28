@@ -1,10 +1,15 @@
+.heroBaner {
+	height: calc(100vh - 70px) !important;
+	background-image: url(../../assets/files/images/herobaner.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
 .pageBody {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	min-height: 100vh;
+	min-height: calc(100vh - 70px);
 	width: 100%;
-	background-color: var(--grey);
-	padding-top: 70px;
 }

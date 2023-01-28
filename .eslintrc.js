@@ -13,6 +13,7 @@ module.exports = {
 	plugins: ['jest'],
 	// add your custom rules here!
 	rules: {
+		'vue/require-default-prop': 'off',
 		'array-callback-return': 'off',
 		'no-console': 'off',
 		'no-const-assign': 'error',

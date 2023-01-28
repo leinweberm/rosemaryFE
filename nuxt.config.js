@@ -1,7 +1,6 @@
 export default {
-	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'rosemaryWeb',
+		title: 'Rosemary maluje',
 		htmlAttrs: {
 			lang: 'en',
 		},
@@ -22,7 +21,8 @@ export default {
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [
 		'~/assets/style/global.css',
-		'~/assets/style/page.css'
+		'~/assets/style/page.css',
+		'~/assets/style/modal.css',
 	],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -33,7 +33,6 @@ export default {
 
 	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
-		// https://go.nuxtjs.dev/eslint
 		'@nuxtjs/eslint-module',
 		'@nuxtjs/style-resources'
 	],
@@ -41,6 +40,8 @@ export default {
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		'@nuxtjs/i18n',
+		'@nuxtjs/axios',
+		'@nuxtjs/auth-next',
 	],
 
 	styleResources: {
@@ -86,6 +87,10 @@ export default {
 	],
 
 	target: 'server',
+
+	auth: {
+
+	},
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {},

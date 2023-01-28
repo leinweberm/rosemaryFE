@@ -1,0 +1,23 @@
+/* MODAL */
+.showModal {
+	display: flex !important;
+}
+.adminModalContainer {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: calc(100% - var(--sideBarWidth));
+	height: 100vh;
+	z-index: 2;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	z-index: 20;
+	left: var(--sideBarWidth);
+}
+.adminModalBody {
+	display: flex;
+	width: 600px;
+	height: 400px;
+	background-color: white;
+}
