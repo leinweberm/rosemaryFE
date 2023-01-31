@@ -8,11 +8,6 @@ app.get('/test', function (req, res) {
 	res.send('Test successful')
 })
 
-app.get('/test2', (req, res) => {
-	res.json({ data:'Test2 successful'} )
-})
-
-
 export default {
 	path: '/api',
 	handler: app
