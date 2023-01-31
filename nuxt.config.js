@@ -18,36 +18,37 @@ export default {
 		],
 	},
 
-	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [
 		'~/assets/style/global.css',
 		'~/assets/style/page.css',
 		'~/assets/style/modal.css',
+		'~/assets/style/admin.css',
 	],
 
-	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [],
+	plugins: [
+	],
 
-	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
 
-	// Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 	buildModules: [
 		'@nuxtjs/eslint-module',
-		'@nuxtjs/style-resources'
+		'@nuxtjs/style-resources',
 	],
 
-	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		'@nuxtjs/i18n',
 		'@nuxtjs/axios',
-		'@nuxtjs/auth-next',
+		'@nuxtjs/auth',
 	],
 
 	styleResources: {
 		scss: [
 			'~/assets/style/global.scss',
 		],
+	},
+
+	axios: {
+		baseURL: 'http://localhost:3000/api',
 	},
 
 	i18n: {
@@ -89,9 +90,23 @@ export default {
 	target: 'server',
 
 	auth: {
-
+		strategies: {
+			local: {
+				token: {
+					property: 'token',
+					global: true,
+				},
+				endpoints: {
+					login: { url: '/auth/login', method: 'post', propertyName: 'token' },
+					logout: { url: '/auth/logout', method: 'post' },
+					user: false,
+				}
+			}
+		}
 	},
 
-	// Build Configuration: https://go.nuxtjs.dev/config-build
-	build: {},
+	build: {
+		use: '@nuxtjs/vercel-builder',
+		distDir: 'dist'
+	},
 };

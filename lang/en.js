@@ -3,13 +3,18 @@ export default {
 	authorBioTitle: 'Rosemary is painting. Abstract paintings. Oil on canvas',
 	authorBio: 'Rosemary is painting!',
 	authorDescription: 'Abstract oil paintings on canvas.',
+	cancel: 'Cancel',
 	city: 'City',
+	confirm: "Confirm",
 	email: 'Email',
 	lang: 'Lang',
 	language: 'Language',
+	login: 'Log in',
+	password: 'Password',
 	phone: 'Phone',
 	postCode: 'Post code',
 	street: 'Street',
+	username: 'Username',
 
 	admin: {
 		exitCMS: 'Leave CMS',
