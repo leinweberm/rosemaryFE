@@ -37,12 +37,6 @@ export default {
 		};
 	},
 	async created() {
-		try {
-			const response = await this.$axios.get('/test2')
-			console.log('data', response.data)
-		} catch (err) {
-			console.log(err)
-		}
 	},
 	methods: {
 	},
