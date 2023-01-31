@@ -82,9 +82,9 @@ export default {
 		}
 	},
 
-	serverMiddleware: [
-		{ path: '/', handler: '~/server-middleware/routes.js'}
-	],
+	serverMiddleware: {
+		'/api': '~/api'
+	},
 
 	target: 'server',
 
