@@ -13,7 +13,7 @@ app.get('/test', function (req, res) {
 app.post('/login', (req, res) => {
 	const { user, password } = req.body;
 	const jwtToken = auth(user, password);
-	res.json({message: 'Login Successful!', token: jwtToken });
+	res.status(201).json({message: 'Login Successful!', token: jwtToken });
 });
 
 export default {

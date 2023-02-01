@@ -109,6 +109,7 @@ export default {
 				data: { ...this.loginForm }
 			});
 			this.$router.push(`/${this.$i18n.locale}/admin`);
+			window.location.reload();
 		},
 	},
 };
