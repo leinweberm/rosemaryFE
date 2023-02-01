@@ -1,8 +1,5 @@
 export const state = () => ({
-	language: '',
-	manualLanguageSelection: false,
 	admin: false,
-	guest: true,
 });
 
 export const getters = {

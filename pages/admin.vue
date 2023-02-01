@@ -4,7 +4,7 @@
 		name="cms"
 		class="pageBody softWhiteBG"
 	>
-		<AdminSidebar @openDialog="openExitCmsDialog" />
+		<AdminSideBar @openDialog="openExitCmsDialog" />
 		<Modal
 			:switcher="showExitCmsDialog"
 		>
@@ -67,19 +67,19 @@
 </template>
 
 <script>
-import AdminSidebar from '../components/AdminSidebar.vue';
+import AdminSideBar from '../components/AdminSidebar.vue';
 import Modal from '../components/Modal.vue';
 
 export default {
 	name: 'AdminPage',
-	components: { AdminSidebar, Modal },
+	components: { AdminSideBar, Modal },
 	layout: 'admin',
 	data() {
 		return {
 			adminModel: null,
 			showExitCmsDialog: false,
 			loginForm: {
-				username: null,
+				user: null,
 				password: null,
 			},
 		};
@@ -95,11 +95,9 @@ export default {
 		},
 	},
 	created() {
+		console.log('loged-in?', this.$auth.loggedIn);
 		this.$nuxt.$on('openExitCmsDialog', this.openExitCmsDialog, this);
 	},
-	// async asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
-
-	// },
 	methods: {
 		openExitCmsDialog(content) {
 			console.log('emit event');
@@ -107,16 +105,11 @@ export default {
 			console.log('content', JSON.stringify(content));
 		},
 		async login() {
-			try {
-				const result = await this.$auth.loginWith('local', {
-					data: { ...this.loginForm }
-				});
-				console.log('result:', JSON.stringify(result));
-			} catch (error) {
-				console.log('error:', JSON.stringify(error));
-				console.error(error);
-			}
-
+			await this.$auth.loginWith('local', {
+				data: { ...this.loginForm }
+			});
+			this.$router.push(`/${this.$i18n.locale}/admin`);
+			window.location.reload();
 		},
 	},
 };
