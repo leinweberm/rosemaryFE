@@ -97,8 +97,8 @@ export default {
 					global: true,
 				},
 				endpoints: {
-					login: { url: '/auth/login', method: 'post', propertyName: 'token' },
-					logout: { url: '/auth/logout', method: 'post' },
+					login: { url: '/login', method: 'post', propertyName: 'token' },
+					logout: { url: '/logout', method: 'post' },
 					user: false,
 				}
 			}
