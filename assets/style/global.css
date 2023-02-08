@@ -8,16 +8,15 @@
 	margin: 0;
 	text-decoration: none;
 	font-family: 'Open Sans', sans-serif;
+	outline: none;
 }
 
 /* ========== GLOBAL STYLES / HTML TAGS ========== */
 /* COLORS*/
 :root {
-	--green: #236642;
-	--purple: #4D2E71;
 	--orange: #EFB737;
 	--softWhite: #FEFEFA;
-	--grey: grey;
+	--grey: #181818;
 	--silver: silver;
 	--softBlack: #0F0E12;
 	--warn: #FB6944;
@@ -25,7 +24,29 @@
 	--sideBarWidth: 250px;
 	--globalPadding: 20px;
 	--globalMargin: 20px;
+
+	--theme-bg-color: rgba(16 18 27 / 40%);
+	--border-color: rgba(113 119 144 / 25%);
+	--theme-color: #f9fafb;
+	--inactive-color: rgba(129, 135, 156, 0.78);
+	--body-font: "Poppins", sans-serif;
+	--hover-menu-bg: rgba(12 15 25 / 30%);
+	--content-title-color: #999ba5;
+	--content-bg: rgb(146 151 179 / 13%);
+	--button-inactive: rgb(249 250 251 / 55%);
+	--dropdown-bg: #21242d;
+	--dropdown-hover: rgb(42 46 60);
+	--popup-bg: rgb(22 25 37);
+	--search-bg:  #14162b;
+	--overlay-bg: rgba(36, 39, 59, 0.3);
+	--scrollbar-bg: rgb(1 2 3 / 40%);
 }
+.mainBody {
+	border-bottom: 1px solid var(--theme-bg-color);
+	background-color: var(--theme-bg-color);
+	backdrop-filter: blur(20px);
+}
+
 .softWhite { color: var(--softWhite); }
 .softWhiteBG { background-color: var(--softWhite); }
 .softBlack { color: var(--softBlack); }
@@ -102,42 +123,6 @@ input:focus {
 }
 
 /* ========== GLOBAL COMPONENTS ========== */
-/* NAVBAR */
-.navBody {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 70px;
-	z-index: 10;
-	position: absolute;
-	top: 0;
-}
-.navInnerBody {
-	display: flex;
-	width: 90%;
-	max-width: 1200px;
-	justify-content: space-between;
-	align-items: flex-end;
-}
-.navWrapper {
-	display: flex;
-	height: 100%;
-	justify-content: flex-end;
-	align-items: center;
-}
-.navLink {
-	padding: 0 var(--globalPadding);
-	margin-right: var(--globalMargin);
-	font-size: 18px;
-}
-.navPadder {
-	display: flex;
-	height: 70px;
-	width: 100%;
-}
-
 /* ADMIN SIDEBAR MENU */
 .sideBar {
 	display: flex;
@@ -190,35 +175,4 @@ input:focus {
 	width: 30%;
 	justify-content: flex-start;
 	align-items: center;
-}
-.langSwitchBody {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 30px;
-	height: 30px;
-	z-index: 11;
-	top: 20px;
-	right: 20px;
-	border: 1px solid var(--softWhite);
-	cursor: pointer;
-}
-.langOptions {
-	display: flex;
-	flex-direction: column;
-	min-height: 30px;
-	width: 30px;
-	position: absolute;
-	top: 52px;
-	z-index: 11;
-}
-.langOptionsItem {
-	display: flex;
-	min-height: 30px;
-	width: 30px;
-	justify-content: center;
-	align-items: center;
-	font-weight: 500;
-	border: 1px solid var(--grey);
 }

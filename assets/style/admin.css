@@ -1,3 +1,17 @@
+.adminPage {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+}
+.pictureBackground {
+	background-image: url(../files/images/herobaner.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .adminLoginForm {
 	display: grid;
 	flex-direction: column;
@@ -7,7 +21,6 @@
 	min-height: 100px;
 	max-width: 800px;
 	min-width: 250px;
-	border: 1px solid var(--orange);
 	grid-template-columns: 1fr;
 	grid-template-rows: 50px auto 50px;
 	grid-row-gap: var(--globalPadding);
@@ -16,7 +29,7 @@
 		'body',
 		'buttons'
 	;
-	filter: drop-shadow(0px 9px 12px silver);
+	border: 1px solid var(--orange);
 }
 .adminLoginItem {
 	color: silver;

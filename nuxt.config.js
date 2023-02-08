@@ -17,12 +17,14 @@ export default {
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 		],
 	},
+	ssr: true,
 
 	css: [
 		'~/assets/style/global.css',
 		'~/assets/style/page.css',
 		'~/assets/style/modal.css',
 		'~/assets/style/admin.css',
+		'~/assets/style/navbar.css',
 	],
 
 	plugins: [

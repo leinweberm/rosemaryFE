@@ -1,5 +1,5 @@
 <template>
-	<div class="pageBody softWhiteBG heroBaner" :name="$t('meta.backgroundImage')">
+	<div class="pageBody greyBG pictureBackground" :name="$t('meta.backgroundImage')">
 		<title>{{ $t('authorBioTitle') }}</title>
 		<div style="position: absolute; top: 80%; text-align: center">
 			<h1

@@ -2,7 +2,8 @@
 	<div
 		v-if="$auth.loggedIn"
 		name="cms"
-		class="pageBody softWhiteBG"
+		class="adminPage softWhiteBG"
+		style="min-heigh: 100vh"
 	>
 		<AdminSideBar @openDialog="openExitCmsDialog" />
 		<Modal
@@ -13,7 +14,8 @@
 	<div
 		v-else
 		name="login-form"
-		class="pageBody softWhiteBG"
+		class="adminPage softWhiteBG"
+		style="min-heigh: 100vh;"
 	>
 		<div
 			name="form-body"
